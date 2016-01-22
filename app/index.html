@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="2077" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>2077</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Revalia' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="app.css">
+
+    <script src="../node_modules/underscore/underscore.js"></script>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <primary-nav></primary-nav>
+    <div ui-view></div>
+    <div>2077: v<span app-version></span></div>
+</div>
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+
+<script src="app.js"></script>
+
+<script src="battlefield/battlefield.module.js"></script>
+<script src="battlefield/battlefield.controller.js"></script>
+
+<script src="settings/settings.module.js"></script>
+<script src="settings/settings.controller.js"></script>
+
+<script src="components/components.module.js"></script>
+
+<script src="components/directives/componentDirectives.module.js"></script>
+<script src="components/directives/character/character.directive.js"></script>
+<script src="components/directives/character/character.controller.js"></script>
+<script src="components/directives/mob/mob.directive.js"></script>
+<script src="components/directives/mob/mob.controller.js"></script>
+<script src="components/directives/primaryNav/primaryNav.directive.js"></script>
+
+<script src="components/services/componentServices.module.js"></script>
+<script src="components/services/gameState/gameState.service.js"></script>
+
+<script src="components/filters/componentFilters.module.js"></script>
+<script src="components/filters/leftPad/leftPad.filter.js"></script>
+
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+.mob {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  padding: 5px;
+
+  .portrait {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    background-color: #e7e7e7;
+  }
+
+  .name {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+  .life-bar {
+    width: 12em;
+
+    .progress {
+      background-color: #e22;
+      border-radius: 0.3em;
+      height: 1.2em;
+
+      .progress-bar-success {
+        background-color: #199919;
+      }
+    }
+  }
+}

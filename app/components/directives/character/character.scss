@@ -1,0 +1,44 @@
+.character {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin: 0 auto 24px;
+  max-width: 240px;
+
+  :last-child {
+    margin-bottom: 0;
+  }
+
+  .avatar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex: 0 0 64px;
+    height: 64px;
+    background-color: #e7e7e7;
+    border-radius: 0.2em;
+
+    .level-up {
+      font-size: 0.6em;
+      padding: 0.6em 0.9em;
+      user-select: none;
+      outline: 0;
+    }
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    padding: 0.5em;
+    border: solid 1px #e7e7e7;
+    border-radius: 4px;
+    background-color: #333;
+    color: #eee;
+
+    .name {
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+  }
+}

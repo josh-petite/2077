@@ -1,0 +1,36 @@
+{
+  "mobs": [
+    {
+      "name": "Street Rat",
+      "level": 1,
+      "hp": 5,
+      "reward": {
+        "nuyen": [1, 2]
+      }
+    },
+    {
+      "name": "Hood",
+      "level": 1,
+      "hp": 7,
+      "reward": {
+        "nuyen": [2, 3]
+      }
+    },
+    {
+      "name": "Gangster",
+      "level": 1,
+      "hp": 15,
+      "reward": {
+        "nuyen": [4, 6]
+      }
+    },
+    {
+      "name": "Ghoul",
+      "level": 2,
+      "hp": 35,
+      "reward": {
+        "nuyen": [14, 26]
+      }
+    }
+  ]
+}

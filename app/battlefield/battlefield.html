@@ -1,0 +1,22 @@
+<div class="stats-container">
+    <span class="buffer"><i class="fa fa-credit-card"></i> {{ vm.gameState.getNuyen() | number }}¥</span>
+    <span class="buffer">//</span>
+    <span class="buffer">
+        <img src="assets/images/sword.png" width="14" height="14" style="margin-top: -3px;"> {{ vm.gameState.getDps() | number }}
+    </span>
+</div>
+
+<div class="battlefield">
+    <div class="character-container">
+        <character name="Malduvias" factor="1" portrait="malduvias"></character>
+        <character name="Cloud" factor="100" portrait="cloud"></character>
+        <character name="Soulforge" factor="10000" portrait="soulforge"></character>
+        <character name="Metal" factor="30000" portrait="metal"></character>
+        <character name="Spectre" factor="50000" portrait="spectre"></character>
+        <character name="Lightning" factor="70000" portrait="lightning"></character>
+    </div>
+
+    <div class="scene-container">
+        <mob></mob>
+    </div>
+</div>

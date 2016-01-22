@@ -1,0 +1,18 @@
+<div class="character">
+    <div class="avatar" ng-style="{'background-image': 'url(assets/images/' + vm.portrait + '.png)'}">
+        <button class="btn level-up"
+                ng-click="vm.levelUpCharacter()"
+                ng-class="{'btn-primary': !vm.isTooExpensive(), 'btn-danger': vm.isTooExpensive()}"
+                ng-disabled="vm.isTooExpensive()">
+            <i class="fa fa-plus"></i>
+        </button>
+    </div>
+
+    <div class="description">
+        <h3 class="name">{{ vm.character.name }}</h3>
+        <p class="stats">
+            <label>Level: {{ vm.character.level | leftPad:3 }}</label>
+            <label>Next: {{ vm.character.next }}¥ </label>
+        </p>
+    </div>
+</div>
