@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>2077</title>
+    <title>{{ 'global.title' | translate }}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Revalia' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.css">
@@ -15,9 +15,12 @@
 
     <script src="../node_modules/underscore/underscore.js"></script>
     <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-sanitize/angular-sanitize.js"></script>
     <script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
     <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="../node_modules/angular-translate/dist/angular-translate.js"></script>
+    <script src="../node_modules/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -38,6 +41,9 @@
 <script src="settings/settings.module.js"></script>
 <script src="settings/settings.controller.js"></script>
 
+<script src="stats/stats.module.js"></script>
+<script src="stats/stats.controller.js"></script>
+
 <script src="components/components.module.js"></script>
 
 <script src="components/directives/componentDirectives.module.js"></script>
@@ -51,7 +57,7 @@
 <script src="components/services/gameState/gameState.service.js"></script>
 
 <script src="components/filters/componentFilters.module.js"></script>
-<script src="components/filters/leftPad/leftPad.filter.js"></script>
+<script src="components/filters/padLeft/padLeft.filter.js"></script>
 
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>

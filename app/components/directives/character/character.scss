@@ -2,8 +2,8 @@
   font-weight: bold;
   display: flex;
   align-items: center;
-  margin: 0 auto 24px;
-  max-width: 240px;
+  margin: 0 auto 10px;
+  width: 100%;
 
   :last-child {
     margin-bottom: 0;
@@ -17,6 +17,7 @@
     height: 64px;
     background-color: #e7e7e7;
     border-radius: 0.2em;
+    margin-left: 10px;
 
     .level-up {
       font-size: 0.6em;
@@ -27,10 +28,9 @@
   }
 
   .description {
-    display: flex;
-    flex-direction: column;
-    margin-left: 12px;
-    padding: 0.5em;
+    flex: 1;
+    margin: 0 10px;
+    padding: 0.8em;
     border: solid 1px #e7e7e7;
     border-radius: 4px;
     background-color: #333;

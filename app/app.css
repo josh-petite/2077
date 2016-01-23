@@ -4,7 +4,7 @@ ul,
 ol {
   margin: 0;
   padding: 0;
-  font-family: 'Revalia', cursive; }
+  font-family: 'Oswald', sans-serif; }
 
 button {
   cursor: pointer; }
@@ -32,16 +32,19 @@ button {
   flex-flow: row wrap;
   border: 1px solid darkgray;
   border-radius: 5px;
-  margin-bottom: 20px; }
+  margin-bottom: 15px;
+  background-color: #999; }
   .stats-container .buffer {
     margin: 0 10px; }
+  .stats-container .pull-up {
+    margin-top: -5px; }
 
 .character {
   font-weight: bold;
   display: flex;
   align-items: center;
-  margin: 0 auto 24px;
-  max-width: 240px; }
+  margin: 0 auto 10px;
+  width: 100%; }
   .character :last-child {
     margin-bottom: 0; }
   .character .avatar {
@@ -51,17 +54,17 @@ button {
     flex: 0 0 64px;
     height: 64px;
     background-color: #e7e7e7;
-    border-radius: 0.2em; }
+    border-radius: 0.2em;
+    margin-left: 10px; }
     .character .avatar .level-up {
       font-size: 0.6em;
       padding: 0.6em 0.9em;
       user-select: none;
       outline: 0; }
   .character .description {
-    display: flex;
-    flex-direction: column;
-    margin-left: 12px;
-    padding: 0.5em;
+    flex: 1;
+    margin: 0 10px;
+    padding: 0.8em;
     border: solid 1px #e7e7e7;
     border-radius: 4px;
     background-color: #333;
@@ -104,10 +107,14 @@ button {
     text-align: center; }
   .nav-container .item {
     background-color: #f1f1f1;
-    border-bottom: solid 1px #e7e7e7; }
+    border-bottom: solid 1px #e7e7e7;
+    outline: 0; }
+    .nav-container .item :hover {
+      background-color: #99f; }
   .nav-container .link {
     padding: 8px;
-    display: block; }
+    display: block;
+    outline: 0; }
   .nav-container .toggle {
     margin: 0 0 4px 0;
     padding: 4px;

@@ -2,7 +2,7 @@
     "use strict";
 
     angular.module('2077.components.filters')
-        .filter('leftPad', function () {
+        .filter('padLeft', function () {
             return function (n, len) {
                 var num = parseInt(n, 10);
                 len = parseInt(len, 10);

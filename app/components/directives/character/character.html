@@ -11,8 +11,8 @@
     <div class="description">
         <h3 class="name">{{ vm.character.name }}</h3>
         <p class="stats">
-            <label>Level: {{ vm.character.level | leftPad:3 }}</label>
-            <label>Next: {{ vm.character.next }}¥ </label>
+            <label>{{ 'components.character.level' | translate }}: {{ vm.character.level | padLeft:3 }}</label>
+            <label>{{ 'components.character.next' | translate }}: {{ vm.character.next }}¥ </label>
         </p>
     </div>
 </div>

@@ -15,11 +15,14 @@
             vm.mobs = [];
             vm.nuyen = 1;
             vm.dps = 0.0;
-            vm.attackSpeed = 500;
+            vm.attackSpeed = 1000;
             vm.settings = {
-                mobView: {
+                mob: {
                     lifeBarAnimated: true
                 }
+            };
+            vm.stats = {
+                totalKills: 0
             };
 
             $rootScope.$on('spawnMob', spawnMob);
@@ -34,7 +37,8 @@
             getNuyen: getNuyen,
             levelUpCharacter: levelUpCharacter,
             registerCharacter: registerCharacter,
-            settings: vm.settings
+            settings: vm.settings,
+            stats: vm.stats
         };
 
         ///////////////////////////////////////////////////////////////////////
@@ -76,6 +80,7 @@
 
         function processReward(e, reward) {
             vm.nuyen += _.random(reward.nuyen[0], reward.nuyen[1]);
+            vm.stats.totalKills++;
         }
 
         function recalculateDps() {
@@ -109,7 +114,7 @@
 
         function spawnMob(e) {
             if (!vm.mobs || !vm.mobs.length) {
-                var promise = $http.get('components/services/gameState/mobData.json');
+                var promise = $http.get('assets/data/mob.json');
                 promise.then(function (response) {
                     vm.mobs = response.data.mobs;
                     $rootScope.$broadcast('mobSpawned', retrieveNextMob());

@@ -1,0 +1,25 @@
+{
+  "global": {
+    "title": "2077"
+  },
+  "battlefield": {
+  },
+  "components": {
+    "character": {
+      "level": "Level",
+      "next": "Next"
+    }
+  },
+  "nav": {
+    "battlefield": "Battlefield",
+    "stats": "Stats",
+    "settings": "Settings",
+    "about": "About"
+  },
+  "settings": {
+    "animatedLifeBar": "Animate Life Bar"
+  },
+  "stats": {
+    "totalKills": "Total Kills"
+  }
+}

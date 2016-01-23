@@ -28,9 +28,14 @@
   flex-flow: row wrap;
   border: 1px solid darkgray;
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  background-color: #999;
 
   .buffer {
     margin: 0 10px;
+  }
+
+  .pull-up {
+    margin-top: -5px;
   }
 }
