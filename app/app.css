@@ -11,6 +11,19 @@ button {
 
 .battlefield {
   display: flex; }
+  .battlefield .character-container {
+    flex: 1;
+    background-color: #ddd;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    margin-right: 10px; }
+  .battlefield .scene-container {
+    flex: 6;
+    background-color: #ddd;
+    align-items: center;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    user-select: none; }
 
 .stats-container {
   display: flex;
@@ -24,14 +37,15 @@ button {
   .stats-container .pull-up {
     margin-top: -5px; }
 
+.top-buffer {
+  margin-top: 10px !important; }
+
 .character {
   font-weight: bold;
   display: flex;
   align-items: center;
   margin: 0 auto 10px;
   width: 100%; }
-  .character :last-child {
-    margin-bottom: 0; }
   .character .avatar {
     display: flex;
     justify-content: flex-start;
@@ -49,7 +63,7 @@ button {
   .character .description {
     flex: 1;
     margin: 0 10px;
-    padding: 0.8em;
+    padding: 0 0.8em;
     border: solid 1px #e7e7e7;
     border-radius: 4px;
     background-color: #333;
@@ -57,15 +71,6 @@ button {
     .character .description .name {
       margin-top: 0;
       margin-bottom: 5px; }
-
-.character-container {
-  flex: 1;
-  background-color: #ddd;
-  border: 1px solid darkgray;
-  border-radius: 5px;
-  margin-right: 10px; }
-  .character-container .character:first-child {
-    margin-top: 10px; }
 
 .mob {
   display: flex;
@@ -138,4 +143,3 @@ button {
       line-height: 48px; }
     .nav-container .toggle {
       display: none; } }
-

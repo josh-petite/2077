@@ -11,98 +11,56 @@
         activate();
 
         function activate() {
-            vm.characters = [];
             vm.mobs = [];
-            vm.nuyen = 1;
-            vm.dps = 0.0;
-            vm.attackSpeed = 1000;
+
             vm.settings = {
                 mob: {
                     lifeBarAnimated: true
                 }
             };
+
             vm.stats = {
-                totalKills: 0
+                attackSpeed: 1000,
+                currentNuyen: 1,
+                dps: 0.0,
+                totalKills: 0,
+                totalNuyen: 1
             };
 
             $rootScope.$on('spawnMob', spawnMob);
             $rootScope.$on('mobKilled', processReward);
+            $rootScope.$on('characterLeveledUp', processLevelUp);
         }
 
         return {
-            getAttackSpeed: getAttackSpeed,
-            getCharacter: getCharacter,
-            getDps: getDps,
-            getLevelUpCost: getLevelUpCost,
-            getNuyen: getNuyen,
-            levelUpCharacter: levelUpCharacter,
-            registerCharacter: registerCharacter,
+            getState: getState,
             settings: vm.settings,
             stats: vm.stats
         };
 
         ///////////////////////////////////////////////////////////////////////
 
-        function getAttackSpeed() {
-            return vm.attackSpeed;
-        }
-
-        function getCharacter(name) {
-            return _.find(vm.characters, function (character) {
-                return character.name === name;
-            });
-        }
-
-        function getDps() {
-            return vm.dps;
-        }
-
-        function getLevelUpCost(character) {
-            return parseInt(character.factor) + parseInt(character.factor * (character.level * 8));
-        }
-
-        function getNuyen() {
-            return vm.nuyen;
+        function getState() {
+            return {};
         }
 
         function handleError(error) {
             $log.error(error);
         }
 
-        function levelUpCharacter(character) {
-            var levelUpPrice = getLevelUpCost(character);
-            character.level++;
-            character.next = getLevelUpCost(character);
+        function processLevelUp(e, character) {
 
-            vm.nuyen -= levelUpPrice;
             recalculateDps();
         }
 
         function processReward(e, reward) {
-            vm.nuyen += _.random(reward.nuyen[0], reward.nuyen[1]);
+            var nuyen = _.random(reward.nuyen[0], reward.nuyen[1]);
+            vm.stats.currentNuyen += nuyen;
+            vm.stats.totalNuyen += nuyen;
             vm.stats.totalKills++;
         }
 
-        function recalculateDps() {
-            var newDps = 0.0;
-            _.each(vm.characters, function (character) {
-                newDps += character.factor * character.level * (vm.attackSpeed / 1000);
-            });
 
-            vm.dps = newDps;
-        }
-
-        function registerCharacter(name, factor) {
-            var character = {
-                name: name,
-                factor: factor,
-                level: 0
-            };
-
-            character.next = getLevelUpCost(character);
-            vm.characters.push(character);
-            return character;
-        }
 
         function retrieveNextMob() {
             var index = _.random(0, vm.mobs.length - 1);

@@ -3,14 +3,14 @@
 
     angular.module('2077', [
         'ngSanitize',
+        'ngCookies',
         'ui.router',
         'ui.bootstrap',
         'pascalprecht.translate',
-        '2077.version',
+        '2077.components',
         '2077.battlefield',
         '2077.settings',
-        '2077.stats',
-        '2077.components'
+        '2077.stats'
     ]);
 
     angular.module('2077')

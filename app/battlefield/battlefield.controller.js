@@ -5,13 +5,14 @@
         .controller('BattlefieldController', battlefieldController);
 
     /* @ngInject */
-    function battlefieldController(GameState, $scope, $interval) {
+    function battlefieldController(GameState, $scope, $interval, $cookies) {
         var vm = this;
         vm.gameState = GameState;
 
         activate();
 
         function activate() {
+            $scope.$on('saveRequested', saveGame);
             beginFighting();
         }
 
@@ -26,7 +27,11 @@
 
             stop = $interval(function() {
                 $scope.$broadcast('attackMob');
-            }, vm.gameState.getAttackSpeed());
+            }, vm.gameState.stats.attackSpeed);
+        }
+
+        function saveGame() {
+            $cookies.putObject('2077', vm.gameState.getState())
         }
 
         function stopFighting() {

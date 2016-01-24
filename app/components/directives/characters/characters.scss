@@ -1,11 +1,44 @@
-.character-container {
-  flex: 1;
-  background-color: #ddd;
-  border: 1px solid darkgray;
-  border-radius: 5px;
-  margin-right: 10px;
+.top-buffer {
+  margin-top: 10px !important;
+}
 
-  .character:first-child {
-    margin-top: 10px;
+.character {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin: 0 auto 10px;
+  width: 100%;
+
+  .avatar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex: 0 0 64px;
+    height: 64px;
+    background-color: #e7e7e7;
+    border-radius: 0.2em;
+    margin-left: 10px;
+
+    .level-up {
+      font-size: 0.6em;
+      padding: 0.6em 0.9em;
+      user-select: none;
+      outline: 0;
+    }
+  }
+
+  .description {
+    flex: 1;
+    margin: 0 10px;
+    padding: 0 0.8em;
+    border: solid 1px #e7e7e7;
+    border-radius: 4px;
+    background-color: #333;
+    color: #eee;
+
+    .name {
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
   }
 }
