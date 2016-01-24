@@ -1,10 +1,10 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
-var nodemon = require('gulp-nodemon');
+var bump = require('gulp-bump');
 var webserver = require('gulp-webserver');
 
-gulp.task('default', ['sass', 'webserver'], function() {
+gulp.task('default', ['sass', 'bump', 'webserver'], function() {
 });
 
 gulp.task('sass', function() {
@@ -13,6 +13,8 @@ gulp.task('sass', function() {
         .pipe(concat('app.css'))
         .pipe(gulp.dest('app'));
 });
+
+gulp.watch('app/**/*.scss', ['sass']);
 
 gulp.task('webserver', function() {
     gulp.src('')
@@ -23,4 +25,8 @@ gulp.task('webserver', function() {
         }));
 });
 
-gulp.watch('app/**/*.scss', ['sass']);
+gulp.task('bump', function(){
+    gulp.src('./package.json')
+        .pipe(bump())
+        .pipe(gulp.dest('./'));
+});

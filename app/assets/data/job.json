@@ -1,0 +1,11 @@
+{
+  "jobs": [
+    {
+      "name": "Adventurer",
+      "image": "adventurer-icon.png",
+      "attributes": {
+        "expRate": 1.0
+      }
+    }
+  ]
+}

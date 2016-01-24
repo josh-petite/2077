@@ -11,21 +11,6 @@ button {
 
 .battlefield {
   display: flex; }
-  .battlefield .character-container {
-    flex: 1;
-    background-color: #ddd;
-    border: 1px solid darkgray;
-    border-radius: 5px;
-    margin-right: 10px; }
-    .battlefield .character-container .character:first-child {
-      margin-top: 5px; }
-  .battlefield .scene-container {
-    flex: 6;
-    background-color: #ddd;
-    align-items: center;
-    border: 1px solid darkgray;
-    border-radius: 5px;
-    user-select: none; }
 
 .stats-container {
   display: flex;
@@ -72,6 +57,15 @@ button {
     .character .description .name {
       margin-top: 0;
       margin-bottom: 5px; }
+
+.character-container {
+  flex: 1;
+  background-color: #ddd;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  margin-right: 10px; }
+  .character-container .character:first-child {
+    margin-top: 10px; }
 
 .mob {
   display: flex;
@@ -144,3 +138,4 @@ button {
       line-height: 48px; }
     .nav-container .toggle {
       display: none; } }
+

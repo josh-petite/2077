@@ -20,6 +20,9 @@
     "animatedLifeBar": "Animate Life Bar"
   },
   "stats": {
-    "totalKills": "Total Kills"
+    "totalKills": "Total Kills",
+    "totalNuyen": "Total Nuyen",
+    "currentNuyen": "Current Nuyen",
+    "dps": "DPS"
   }
 }

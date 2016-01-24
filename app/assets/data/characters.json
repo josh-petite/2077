@@ -1,0 +1,40 @@
+{
+  "characters": [
+    {
+      "name": "Kain",
+      "factor": 1,
+      "portrait": "kain",
+      "job": "Adventurer"
+    },
+    {
+      "name": "Cloud",
+      "factor": 100,
+      "portrait": "cloud",
+      "job": "Adventurer"
+    },
+    {
+      "name": "Altair",
+      "factor": 10000,
+      "portrait": "altair",
+      "job": "Adventurer"
+    },
+    {
+      "name": "Robocop",
+      "factor": 90000,
+      "portrait": "robocop",
+      "job": "Adventurer"
+    },
+    {
+      "name": "Goku",
+      "factor": 250000,
+      "portrait": "goku",
+      "job": "Adventurer"
+    },
+    {
+      "name": "Lightning",
+      "factor": 700000,
+      "portrait": "lightning",
+      "job": "Adventurer"
+    }
+  ]
+}

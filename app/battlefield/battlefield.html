@@ -1,5 +1,5 @@
 <div class="stats-container">
-    <span class="buffer"><i class="fa fa-credit-card"></i> {{ vm.gameState.getNuyen() | number | padLeft:12 }}¥</span>
+    <span class="buffer"><i class="fa fa-credit-card"></i> {{ vm.gameState.getNuyen() | padLeft:12 | number }}¥</span>
     <span class="buffer">//</span>
     <span class="buffer">
         <img class="pull-up" src="assets/images/sword.png" width="14" height="14">
@@ -8,16 +8,6 @@
 </div>
 
 <div class="battlefield">
-    <div class="character-container">
-        <character name="Kain" factor="1" portrait="kain"></character>
-        <character name="Cloud" factor="100" portrait="cloud"></character>
-        <character name="Altair" factor="10000" portrait="altair"></character>
-        <character name="Robocop" factor="90000" portrait="robocop"></character>
-        <character name="Goku" factor="250000" portrait="goku"></character>
-        <character name="Lightning" factor="700000" portrait="lightning"></character>
-    </div>
-
-    <div class="scene-container">
-        <mob></mob>
-    </div>
+    <characters></characters>
+    <scene></scene>
 </div>
