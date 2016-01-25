@@ -1,8 +1,25 @@
 .battlefield {
   display: flex;
 
+  @media (min-width: 1600px) {
+    .character-container {
+      flex: 1;
+    }
+    .scene-container {
+      flex: 6;
+    }
+  }
+
+  @media (max-width: 1600px) {
+    .character-container {
+      flex: 2;
+    }
+    .scene-container {
+      flex: 4;
+    }
+  }
+
   .character-container {
-    flex: 1;
     background-color: #ddd;
     border: 1px solid darkgray;
     border-radius: 5px;
@@ -10,7 +27,6 @@
   }
 
   .scene-container {
-    flex: 6;
     background-color: #ddd;
     align-items: center;
     border: 1px solid darkgray;

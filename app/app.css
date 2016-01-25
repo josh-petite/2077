@@ -11,14 +11,22 @@ button {
 
 .battlefield {
   display: flex; }
+  @media (min-width: 1600px) {
+    .battlefield .character-container {
+      flex: 1; }
+    .battlefield .scene-container {
+      flex: 6; } }
+  @media (max-width: 1600px) {
+    .battlefield .character-container {
+      flex: 2; }
+    .battlefield .scene-container {
+      flex: 4; } }
   .battlefield .character-container {
-    flex: 1;
     background-color: #ddd;
     border: 1px solid darkgray;
     border-radius: 5px;
     margin-right: 10px; }
   .battlefield .scene-container {
-    flex: 6;
     background-color: #ddd;
     align-items: center;
     border: 1px solid darkgray;
@@ -40,6 +48,9 @@ button {
 .top-buffer {
   margin-top: 10px !important; }
 
+.not-in-party {
+  opacity: 0.2; }
+
 .character {
   font-weight: bold;
   display: flex;
@@ -47,14 +58,12 @@ button {
   margin: 0 auto 10px;
   width: 100%; }
   .character .avatar {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
     flex: 0 0 64px;
     height: 64px;
     background-color: #e7e7e7;
-    border-radius: 0.2em;
-    margin-left: 10px; }
+    border-radius: 1.0em;
+    margin-left: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); }
     .character .avatar .level-up {
       font-size: 0.6em;
       padding: 0.6em 0.9em;
@@ -64,13 +73,70 @@ button {
     flex: 1;
     margin: 0 10px;
     padding: 0 0.8em;
-    border: solid 1px #e7e7e7;
-    border-radius: 4px;
+    border-radius: 0.3em;
     background-color: #333;
-    color: #eee; }
+    color: #eee;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); }
     .character .description .name {
       margin-top: 0;
       margin-bottom: 5px; }
+    .character .description .job {
+      width: 16px;
+      height: 16px;
+      margin-left: 10px;
+      margin-bottom: 3px; }
+    .character .description .stats .experience-bar {
+      height: 10px;
+      margin-bottom: 5px;
+      border: 2px double #ccc; }
+      .character .description .stats .experience-bar .progress-bar {
+        background-color: #804060; }
+  .character .party-indicator {
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 90;
+    overflow: hidden; }
+    .character .party-indicator .ribbon-wrapper-blue {
+      width: 45px;
+      height: 40px;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      right: -10px; }
+      .character .party-indicator .ribbon-wrapper-blue .ribbon-blue {
+        font: bold 12px Sans-Serif;
+        text-align: center;
+        text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        position: relative;
+        padding: 2px 0;
+        left: 3px;
+        top: 0;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(lightblue), to(blue));
+        background-image: -webkit-linear-gradient(top, lightblue, blue);
+        background-image: -moz-linear-gradient(top, lightblue, blue);
+        background-image: -ms-linear-gradient(top, lightblue, blue);
+        background-image: -o-linear-gradient(top, lightblue, blue);
+        color: #ffffff;
+        -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+        cursor: default; }
+        .character .party-indicator .ribbon-wrapper-blue .ribbon-blue :before, .character .party-indicator .ribbon-wrapper-blue .ribbon-blue :after {
+          content: "";
+          border-top: 3px solid #6e8900;
+          border-left: 3px solid transparent;
+          border-right: 3px solid transparent;
+          position: absolute;
+          bottom: -3px; }
+        .character .party-indicator .ribbon-wrapper-blue .ribbon-blue :before {
+          left: 0; }
+        .character .party-indicator .ribbon-wrapper-blue .ribbon-blue :after {
+          right: 0; }
 
 .mob {
   display: flex;
@@ -143,3 +209,8 @@ button {
       line-height: 48px; }
     .nav-container .toggle {
       display: none; } }
+
+.scene {
+  padding: 10px; }
+  .scene .area {
+    font-size: 16px; }

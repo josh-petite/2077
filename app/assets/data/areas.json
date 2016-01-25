@@ -1,0 +1,42 @@
+{
+  "areas": [
+    {
+      "name": "Bright Forest",
+      "mobs": [
+        {
+          "name": "Small Rat",
+          "hp": 3,
+          "reward": {
+            "exp": 2
+          }
+        },
+        {
+          "name": "Goblin",
+          "hp": 7,
+          "reward": {
+            "exp": 3
+          }
+        },
+        {
+          "name": "Zombie",
+          "hp": 15,
+          "reward": {
+            "exp": 5
+          }
+        }
+      ]
+    },
+    {
+      "name": "Shrouded Cave",
+      "mobs": [
+        {
+          "name": "Ghoul",
+          "hp": 35,
+          "reward": {
+            "exp": 20
+          }
+        }
+      ]
+    }
+  ]
+}

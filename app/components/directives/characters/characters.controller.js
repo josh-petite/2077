@@ -5,11 +5,11 @@
         .controller('CharactersController', charactersController);
 
     /* @ngInject */
-    function charactersController($scope, $log, GameState, CharacterService) {
+    function charactersController($rootScope, $log, GameState, CharacterService) {
         var vm = this;
 
-        vm.getLevelUpCost = getLevelUpCost;
-        vm.isLevelUpTooExpensive = isLevelUpTooExpensive;
+        vm.getNextLevelExpTotal = getNextLevelExpTotal;
+        vm.canLevelUp = canLevelUp;
         vm.levelUpCharacter = levelUpCharacter;
         vm.retrieveCharacterData = retrieveCharacterData;
 
@@ -17,24 +17,38 @@
 
         function activate() {
             vm.retrieveCharacterData();
+
+            $rootScope.$on('mobKilled', processReward);
         }
 
         ///////////////////////////////////////////////////////////////////////
 
-        function getLevelUpCost(character) {
+        function getNextLevelExpTotal(character) {
             return parseInt(character.factor) + parseInt(character.factor * (character.level * 8));
         }
 
-        function isLevelUpTooExpensive(character) {
-            var levelUpPrice = vm.getLevelUpCost(character);
-            return levelUpPrice > GameState.stats.currentNuyen;
+        function canLevelUp(character) {
+            var neededExp = vm.getNextLevelExpTotal(character);
+            return neededExp < character.nextLevel;
         }
 
         function levelUpCharacter(character) {
-            GameState.stats.currentNuyen -= character.levelUpCost;
             character.level++;
-            character.levelUpCost = vm.getLevelUpCost(character);
+            character.nextLevel = vm.getNextLevelExpTotal(character);
+            character.exp = 0;
             recalculateDps();
+        }
+
+        function processReward(e, reward) {
+            _.each(vm.characters, function (character) {
+                if (character.inParty) {
+                    character.exp += reward.exp;
+
+                    if (character.exp >= character.nextLevel) {
+                        vm.levelUpCharacter(character);
+                    }
+                }
+            });
         }
 
         function recalculateDps() {
@@ -54,9 +68,12 @@
                 vm.characters = response.data.characters;
 
                 _.each(vm.characters, function (character) {
-                    character.level = 0;
-                    character.levelUpCost = vm.getLevelUpCost(character);
+                    character.level = character.level || 0;
+                    character.exp = 0;
+                    character.nextLevel = vm.getNextLevelExpTotal(character);
                 });
+
+                recalculateDps();
             }
 
             function failure(error) {

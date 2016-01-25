@@ -2,6 +2,10 @@
   margin-top: 10px !important;
 }
 
+.not-in-party {
+  opacity: 0.2;
+}
+
 .character {
   font-weight: bold;
   display: flex;
@@ -10,14 +14,12 @@
   width: 100%;
 
   .avatar {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
     flex: 0 0 64px;
     height: 64px;
     background-color: #e7e7e7;
-    border-radius: 0.2em;
+    border-radius: 1.0em;
     margin-left: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 
     .level-up {
       font-size: 0.6em;
@@ -31,14 +33,91 @@
     flex: 1;
     margin: 0 10px;
     padding: 0 0.8em;
-    border: solid 1px #e7e7e7;
-    border-radius: 4px;
+    border-radius: 0.3em;
     background-color: #333;
     color: #eee;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 
     .name {
       margin-top: 0;
       margin-bottom: 5px;
+    }
+
+    .job {
+      width: 16px;
+      height: 16px;
+      margin-left: 10px;
+      margin-bottom: 3px;
+    }
+
+    .stats {
+      .experience-bar {
+        height: 10px;
+        margin-bottom: 5px;
+        border: 2px double #ccc;
+
+        .progress-bar {
+          background-color: #804060;
+        }
+      }
+    }
+  }
+
+  .party-indicator {
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 90;
+    overflow: hidden;
+
+    .ribbon-wrapper-blue {
+      width: 45px;
+      height: 40px;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      right: -10px;
+
+      .ribbon-blue {
+        font: bold 12px Sans-Serif;
+        text-align: center;
+        text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        position: relative;
+        padding: 2px 0;
+        left: 3px;
+        top: 0;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(lightblue), to(blue));
+        background-image: -webkit-linear-gradient(top, lightblue, blue);
+        background-image: -moz-linear-gradient(top, lightblue, blue);
+        background-image: -ms-linear-gradient(top, lightblue, blue);
+        background-image: -o-linear-gradient(top, lightblue, blue);
+        color: #ffffff;
+        -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+        cursor: default;
+
+        :before, :after {
+          content: "";
+          border-top: 3px solid #6e8900;
+          border-left: 3px solid transparent;
+          border-right: 3px solid transparent;
+          position: absolute;
+          bottom: -3px;
+        }
+
+        :before {
+          left: 0;
+        }
+
+        :after {
+          right: 0;
+        }
+      }
     }
   }
 }

@@ -1,23 +1,28 @@
-<div class="character" ng-class="{'top-buffer':$first}" ng-repeat="c in vm.characters">
-    <div class="avatar" ng-style="{'background-image': 'url(assets/images/' + c.portrait + '.png)'}">
-        <button class="btn level-up"
-                ng-click="vm.levelUpCharacter(c)"
-                ng-class="{'btn-primary': !vm.isLevelUpTooExpensive(c), 'btn-danger': vm.isLevelUpTooExpensive(c)}"
-                ng-disabled="vm.isLevelUpTooExpensive(c)">
-            <i class="fa fa-plus"></i>
-        </button>
-    </div>
+<div class="character" ng-class="{'top-buffer':$first, 'not-in-party':!c.inParty}" ng-repeat="c in vm.characters">
+    <div class="avatar" ng-style="{'background-image': 'url(assets/images/' + c.portrait + '.png)'}"></div>
 
-    <div class="description">
-        <h3 class="name">{{ c.name }}</h3>
+    <div class="description party-indicator">
+        <div class="ribbon-wrapper-blue" ng-show="c.inParty">
+            <div class="ribbon-blue">P</div>
+        </div>
+
+        <h3 class="name">
+            {{ c.name }}
+            <img class="job"
+                 src="assets/images/jobs/adventurer.png"
+                 tooltip-popup-close-delay='1000'
+                 uib-tooltip="{{c.job}}">
+        </h3>
+
         <div class="stats">
             <div class="row">
                 <div class="col-lg-3">{{ 'components.character.level' | translate }}:</div>
                 <div class="col-lg-6">{{ c.level | number }}</div>
             </div>
             <div class="row">
-                <div class="col-lg-3">{{ 'components.character.next' | translate }}:</div>
-                <div class="col-lg-6">{{ c.levelUpCost | padLeft:3 }}¥</div>
+                <div class="col-lg-12">
+                    <uib-progressbar class="experience-bar" max="c.nextLevel" value="c.exp"></uib-progressbar>
+                </div>
             </div>
         </div>
     </div>

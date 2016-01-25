@@ -3,38 +3,40 @@
     {
       "name": "Kain",
       "factor": 1,
-      "portrait": "kain",
-      "job": "Adventurer"
+      "inParty": true,
+      "job": "Adventurer",
+      "level": 1,
+      "portrait": "kain"
     },
     {
       "name": "Cloud",
       "factor": 100,
-      "portrait": "cloud",
-      "job": "Adventurer"
+      "job": "Adventurer",
+      "portrait": "cloud"
     },
     {
       "name": "Altair",
       "factor": 10000,
-      "portrait": "altair",
-      "job": "Adventurer"
+      "job": "Adventurer",
+      "portrait": "altair"
     },
     {
       "name": "Robocop",
       "factor": 90000,
-      "portrait": "robocop",
-      "job": "Adventurer"
+      "job": "Adventurer",
+      "portrait": "robocop"
     },
     {
       "name": "Goku",
       "factor": 250000,
-      "portrait": "goku",
-      "job": "Adventurer"
+      "job": "Adventurer",
+      "portrait": "goku"
     },
     {
       "name": "Lightning",
       "factor": 700000,
-      "portrait": "lightning",
-      "job": "Adventurer"
+      "job": "Adventurer",
+      "portrait": "lightning"
     }
   ]
 }
