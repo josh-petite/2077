@@ -27,7 +27,7 @@
 
             stop = $interval(function() {
                 $scope.$broadcast('attackMob');
-            }, vm.gameState.stats.attackSpeed);
+            }, vm.gameState.state.attackSpeed);
         }
 
         function saveGame() {

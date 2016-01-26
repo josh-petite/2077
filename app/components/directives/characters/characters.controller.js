@@ -54,10 +54,10 @@
         function recalculateDps() {
             var newDps = 0.0;
             _.each(vm.characters, function (character) {
-                newDps += character.factor * character.level * (GameState.stats.attackSpeed / 1000);
+                newDps += character.factor * character.level * (GameState.state.attackSpeed / 1000);
             });
 
-            GameState.stats.dps = newDps;
+            GameState.state.dps = newDps;
         }
 
         function retrieveCharacterData() {

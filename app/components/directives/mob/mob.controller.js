@@ -28,7 +28,7 @@
                 return;
             }
 
-            vm.currentMob.currentHp -= GameState.stats.dps;
+            vm.currentMob.currentHp -= GameState.state.dps;
 
             if (vm.currentMob.currentHp <= 0) {
                 $scope.$emit('mobKilled', vm.currentMob.reward);

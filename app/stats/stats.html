@@ -3,7 +3,7 @@
         {{ 'stats.totalKills' | translate }}:
     </div>
     <div class="col-lg-2">
-        {{ vm.gameState.stats.totalKills | number }}
+        {{ vm.gameState.state.totalKills | number }}
     </div>
 </div>
 
@@ -12,7 +12,7 @@
         {{ 'stats.totalExp' | translate }}:
     </div>
     <div class="col-lg-2">
-        {{ vm.gameState.stats.totalExp | number }}
+        {{ vm.gameState.state.totalExp | number }}
     </div>
 </div>
 
@@ -21,6 +21,6 @@
         {{ 'stats.dps' | translate }}:
     </div>
     <div class="col-lg-2">
-        {{ vm.gameState.stats.dps | number }}
+        {{ vm.gameState.state.dps | number }}
     </div>
 </div>
