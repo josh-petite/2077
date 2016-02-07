@@ -7,7 +7,7 @@
     /* @ngInject */
     function scene() {
         return {
-            restrict: 'E',
+            restrict: 'EA',
             scope: {},
             bindToController: true,
             controller: 'SceneController as vm',

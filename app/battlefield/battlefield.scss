@@ -1,23 +1,7 @@
 .battlefield {
   display: flex;
-
-  @media (min-width: 1600px) {
-    .character-container {
-      flex: 1;
-    }
-    .scene-container {
-      flex: 6;
-    }
-  }
-
-  @media (max-width: 1600px) {
-    .character-container {
-      flex: 2;
-    }
-    .scene-container {
-      flex: 4;
-    }
-  }
+  flex-direction: row;
+  min-height: 800px;
 
   .character-container {
     background-color: #ddd;
@@ -27,27 +11,25 @@
   }
 
   .scene-container {
+    flex: 3;
     background-color: #ddd;
-    align-items: center;
     border: 1px solid darkgray;
     border-radius: 5px;
     user-select: none;
   }
-}
 
-.stats-container {
-  display: flex;
-  flex-flow: row wrap;
-  border: 1px solid darkgray;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  background-color: #999;
+  .stats-container {
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #999;
 
-  .buffer {
-    margin: 0 10px;
-  }
+    .buffer {
+      margin: 0 10px;
+    }
 
-  .pull-up {
-    margin-top: -5px;
+    .pull-up {
+      margin-top: -5px;
+    }
   }
 }

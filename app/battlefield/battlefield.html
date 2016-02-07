@@ -1,11 +1,13 @@
-<div class="stats-container">
-    <span class="buffer">
-        <img class="pull-up" src="assets/images/gui/sword.png" width="14" height="14">
-        {{ vm.gameState.state.dps | number }}
-    </span>
-</div>
-
 <div class="battlefield">
-    <characters class="character-container"></characters>
-    <scene class="scene-container"></scene>
+    <div style="flex: 1;">
+        <div class="stats-container">
+            <span class="buffer">
+                <img class="pull-up" src="assets/images/gui/sword.png" width="14" height="14">
+                {{ vm.gameState.state.dps | number }}
+            </span>
+        </div>
+
+        <div class="character-container" characters></div>
+    </div>
+    <div class="scene-container" scene></div>
 </div>

@@ -1,7 +1,11 @@
-html,
-body,
-ul,
-ol {
+html, body {
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, ul, ol {
   margin: 0;
   padding: 0;
   font-family: 'Oswald', sans-serif;

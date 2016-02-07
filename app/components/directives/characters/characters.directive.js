@@ -7,7 +7,7 @@
     /* @ngInject */
     function characters() {
         return {
-            restrict: 'E',
+            restrict: 'EA',
             scope: {},
             bindToController: true,
             controller: 'CharactersController as vm',

@@ -1,7 +1,10 @@
-html,
-body,
-ul,
-ol {
+html, body {
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0; }
+
+html, body, ul, ol {
   margin: 0;
   padding: 0;
   font-family: 'Oswald', sans-serif; }
@@ -10,40 +13,29 @@ button {
   cursor: pointer; }
 
 .battlefield {
-  display: flex; }
-  @media (min-width: 1600px) {
-    .battlefield .character-container {
-      flex: 1; }
-    .battlefield .scene-container {
-      flex: 6; } }
-  @media (max-width: 1600px) {
-    .battlefield .character-container {
-      flex: 2; }
-    .battlefield .scene-container {
-      flex: 4; } }
+  display: flex;
+  flex-direction: row;
+  min-height: 800px; }
   .battlefield .character-container {
     background-color: #ddd;
     border: 1px solid darkgray;
     border-radius: 5px;
     margin-right: 10px; }
   .battlefield .scene-container {
+    flex: 3;
     background-color: #ddd;
-    align-items: center;
     border: 1px solid darkgray;
     border-radius: 5px;
     user-select: none; }
-
-.stats-container {
-  display: flex;
-  flex-flow: row wrap;
-  border: 1px solid darkgray;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  background-color: #999; }
-  .stats-container .buffer {
-    margin: 0 10px; }
-  .stats-container .pull-up {
-    margin-top: -5px; }
+  .battlefield .stats-container {
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #999; }
+    .battlefield .stats-container .buffer {
+      margin: 0 10px; }
+    .battlefield .stats-container .pull-up {
+      margin-top: -5px; }
 
 .top-buffer {
   margin-top: 10px !important; }
